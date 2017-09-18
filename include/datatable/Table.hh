@@ -11,10 +11,13 @@ class Table {
     Table() {};
     virtual ~Table() {};
 
-    void AddStringProperty(Property<std::string>& aProperty);
-    void AddNumericProperty(Property<double>& aProperty);
+    bool AddEntry(const std::string& aName, const std::vector<std::string>& aStringProperties,
+                  const std::vector<double>& aNumericProperties);
+    void AddStringProperty(const Property<std::string>& aProperty);
+    void AddNumericProperty(const Property<double>& aProperty);
 
-    void ListProperties();
+    void PrintData();
+    void PrintProperties();
 
   private:
     std::vector<std::string> mNames;
